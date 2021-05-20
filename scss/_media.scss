@@ -1,0 +1,159 @@
+// Tablets & Smaller
+@media (max-width: 800px) {
+  #header-home {
+    height: 30rem;
+
+    .header-content {
+      padding-top: 5rem; //replace the padding-top 20% from the initial state
+    }
+  }
+}
+
+// Smartphones
+@media (max-width: 500px) {
+  #main-nav {
+    flex-direction: column; //to put logo on top and li in the bottom
+    align-items: center;
+
+    li {
+      padding: 1rem;
+    }
+  }
+
+  #header {
+    &-home {
+      height: 10rem; //to reduce the height of the image & everything
+      border-bottom: 3px solid $main-color;
+      background-position: 20% 30%; //sets the position to align with the picture
+
+      .header-content {
+        display: none; //removes the title, caption and button
+      }
+    }
+
+    &-inner {
+      height: 10rem; //to set the same height for the hero  on the about & work  page than on the home page
+    }
+  }
+
+  // Stack all Grids to columns
+  #home-a .specials,
+  #home-b .stats,
+  #home-c .process,
+  #about-d .testimonials,
+  #contact-b .contact-info,// is the selector you use for the grid
+  .items {
+    grid-template-columns: 1fr;
+  }
+
+  // Home
+  #home {
+    &-a {
+      .specials div {
+        border-bottom: 2px $light-color solid; //adds border under the elements to separate them
+        padding-bottom: 1rem;
+
+        &:last-child {
+          border: none; //removes the border after the last element
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    &-b {
+      //contact info
+      .stats div {
+        padding: 2rem 0 1rem 0;
+      }
+    }
+  }
+
+  // About
+  #about {
+    &-a {
+      .about-info {
+        grid-template-areas: //changes the template area to stack them
+
+          "bioimage"
+          "bio"
+          "aw1"
+          "aw2"
+          "aw3";
+      }
+    }
+
+    &-c {
+      display: none; //removes the company logos that are useless
+    }
+  }
+
+  // Contact
+  #contact {
+    &-a {
+      //the form
+      .text-fields {
+        grid-template-areas: //stacks the form inputs
+
+          "name"
+          "subject"
+          "email"
+          "phone"
+          "message";
+      }
+    }
+
+    &-b {
+      // the divs with the contact infos
+      div {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px #555 solid;
+
+        &:last-child {
+          border: none;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    &-c {
+      h1 {
+        //let's start your project
+        font-size: 2rem;
+      }
+    }
+  }
+
+  // Footer
+  #main-footer {
+    height: 7rem;
+
+    .footer-content {
+      flex-direction: column; //stacks the elements on top of of each other
+      padding: 1rem;
+      height: 5rem;
+    }
+  }
+}
+
+// Landscape you target the max-height
+@media (max-height: 580px) {
+  //moves the header in the middle
+  #header-home {
+    .header-content {
+      padding-top: 3rem;
+    }
+  }
+}
+
+// for iphone 5 landscape
+@media (max-height: 330px) {
+  #header-home {
+    .header-content {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
